@@ -1,9 +1,9 @@
 /* #### Bod Styling #### */
 
 :root {
-  --primary-color:#76148d;
-  --secondary-color:#E84855;
-  --bg-color: #F2F2FE;
+  --primary-color: #76148d;
+  --secondary-color: #e84855;
+  --bg-color: #f2f2f2;
   --hoverfocus-link-color: #0040dd;
   --visited-link-color: #76148d;
   --heading-font-weight: 700;
@@ -14,8 +14,10 @@ body {
   font-family: 'Nunito', sans-serif;
   font-weight: 400;
   font-size: 18px;
+
   /* Sets the font size to 16px */
   line-height: 1.6;
+
   /* Sets the line-height to 1.6 */
 }
 
@@ -34,9 +36,6 @@ h3 {
   font-weight: var(--heading-font-weight);
 }
 
-
-
-
 /* #### Link Styling #### */
 
 a {
@@ -48,7 +47,8 @@ a:visited {
   color: var(--visited-link-color);
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
   /* No underlining when hovering over a link, color royal blue */
   color: var(--hoverfocus-link-color);
   text-decoration: none;
@@ -59,8 +59,6 @@ a:active {
   color: #46174d;
 }
 
-
-
 .navigation-list__item--active {
   text-decoration: none;
   font-size: 22px;
@@ -70,8 +68,6 @@ a:active {
   text-align: center;
 }
 
-
-
 /* #### Button Styling #### */
 
 button,
@@ -79,38 +75,43 @@ button,
   /* overwrites browser defaults and resets the border */
   border: none;
   display: inline-block;
+
   /* takes the font from the outer container */
   font-family: inherit;
+
   /* styles the background color, font color, and text decoration (underline, etc.) of the button */
   background-color: #76148d;
   color: white;
   text-decoration: none;
-  /*adds spacing to the button (this will be discussed more in-depth later) */
+
+  /* adds spacing to the button (this will be discussed more in-depth later) */
   padding: 10px;
   border-radius: 3px;
+
   /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   transition: 0.2s opacity;
-
-
 }
 
-button:hover, button:focus, .button:hover, .button:focus {
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
   /* lets the mouse appear as a hand when hovering over the button */
   cursor: pointer;
+
   /* reduces the opacity of the button to 80% */
   opacity: 0.8;
 }
+
 .button__secondary {
   background-color: #e0b354;
   color: #76148d;
 }
 
+/* ### Layout Designing ### */
 
-
- /* ### Layout Designing ###*/
-
- .page-header {
+.page-header {
   display: flex;
   width: 100%;
   padding: 20px;
@@ -135,7 +136,7 @@ button:hover, button:focus, .button:hover, .button:focus {
   margin-left: 15px;
 }
 
- .profile__photo {
+.profile__photo {
   float: left;
   width: 250px;
   margin-right: 40px;
@@ -148,36 +149,32 @@ button:hover, button:focus, .button:hover, .button:focus {
   text-align: center;
 }
 
-
 .project__item {
   display: inline-block;
   width: 33%;
 }
 
 @supports (display: grid) {
-.project {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
+  .project {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+  }
+
+  .project__item {
+    background-color: lightgray;
+    width: auto;
+    min-height: auto;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .project__item:last-child {
+    grid-column-end: 3;
+    grid-row-end: 3;
+  }
 }
 
-
-.project__item {
-  background-color: lightgray;
-  width: auto;
-  min-height: auto;
-  margin: 0;
-  padding: 20px;
-}
-
-.project__item:last-child {
-  grid-column-start: 3;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 3;
-}
-
-}
 .page-footer {
   clear: both;
 }
@@ -187,20 +184,19 @@ button:hover, button:focus, .button:hover, .button:focus {
 }
 
 .page-footer {
-    clear: both;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
-/** Responsive Grid**/
+/** Responsive Grid **/
 
 @media all and (max-width: 600px) {
   .project {
     grid-template-columns: 1fr;
   }
 }
-
 
 @media all and (min-width: 600px) and (max-width: 850px) {
   .project {
@@ -212,10 +208,12 @@ button:hover, button:focus, .button:hover, .button:focus {
   .project {
     grid-gap: 10px;
   }
+
   .project__item:last-child {
     grid-column: auto / auto;
     grid-row: auto / auto;
   }
+
   h1 {
     font-size: 22px;
   }
@@ -226,18 +224,19 @@ button:hover, button:focus, .button:hover, .button:focus {
   list-style-type: none;
 }
 
-
 /** Animation **/
 
 @keyframes color-change {
   0% {
-    fill: #edc655;
+    background: #edc655;
   }
+
   50% {
-    fill: #fcffad;
+    background: #fcffad;
   }
+
   100% {
-    fill: #f76414;
+    background: #f76414;
   }
 }
 
@@ -249,6 +248,7 @@ button:hover, button:focus, .button:hover, .button:focus {
   from {
     transform: translate(0, 50px);
   }
+
   to {
     transform: translate(200px, 50px);
   }
@@ -262,6 +262,7 @@ button:hover, button:focus, .button:hover, .button:focus {
   from {
     transform: translate(446px, 48px);
   }
+
   to {
     transform: translate(100px, 48px);
   }
